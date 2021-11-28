@@ -1,0 +1,30 @@
+services:
+  nginx:
+    image: "25805503/nginx:learn2.0"
+    ports:
+      - "8080:80"
+    networks:
+      - network
+  app1:
+    image: "25805503/fastapi:1.0"
+    ports:
+      - "8001:8"
+    networks:
+      - network
+  app2:
+    image: "25805503/fastapi:1.0"
+    ports:
+      - "8002:80"
+    networks:
+      - network
+  app3:
+    image: "25805503/fastapi:1.0"
+    ports:
+      - "8003:80"
+    networks:
+      - network
+  
+networks:
+  network:
+    external: true
+    name: nginx-network
