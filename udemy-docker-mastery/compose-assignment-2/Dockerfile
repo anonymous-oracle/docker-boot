@@ -1,1 +1,5 @@
-# create your custom drupal image here, based of official drupal
+FROM drupal
+
+EXPOSE 80
+
+WORKDIR /var/www/html/themes
